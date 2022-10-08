@@ -9,18 +9,6 @@ bg = Back.BLUE
 r = Back.BLACK
 br = Back.RED
 
-
-### 3 choix: liste/add/del
-# si add:
-# on ajoute le projet -> créer le fichier (si fichier déjà existant alors on le met dedans)
-# si remove
-# on del le projet
-
-#list on montre la liste
-
-
-
-
 num = 0
 
 def list__():
@@ -34,8 +22,6 @@ def list__():
         print(os.listdir(path))
     menu()
     
-
-
 def remove():
     print("REMOVE METHOD")
 
@@ -53,33 +39,22 @@ def remove():
             shutil.rmtree(path)
             s = str(input(""))
 
-
-
     if way == '-f':
-
-
         directory = str(input("Folder name:"))
         if directory == "None" or directory == "-n":
             parent_dir = str(input("Parent dir: "))
             
             path = os.path.join(parent_dir)
             isExist = os.path.exists(path)
-            
-            
-    
         else:
 
-
-            parent_dir = str(input("Parent dir: "))
-            
-            
+            parent_dir = str(input("Parent dir: ")                
             path = os.path.join(parent_dir, directory)
             isExist = os.path.exists(path)
 
         if isExist == False:
             print(br + "/!\ This folder/dir doesn't exist.")
-            menu()
-        
+            menu()        
         else:
             print("Which files you want to delete ?")
             print(os.listdir(path))
@@ -89,11 +64,6 @@ def remove():
     
     print("File(s) / Folder(s) successfully deleted.")
     menu()
-
-
-
-
-
 
 def add():
     print("ADD METHOD")
@@ -132,26 +102,6 @@ def add():
         file1.close()
 
         print(f"Successfully created at {path} !")
-
-
-
-        #with open(f'{s_path}+{fn}.{ext}', 'a') as f:
-        #    f.write(f"")
-
-        
-    
-
-
-        
-        
-       
-
-    #path[str(path)]["dir"] = path
-    #path[str(path)] = {}
-#
-    #with open("data.json", 'w') as f:
-    #    json.dump(path,f)
-
     
 def menu():
     print(bg+"FILE-PROJECT MANAGER"+r)
